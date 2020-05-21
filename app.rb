@@ -32,7 +32,9 @@ get '/details/:post_id' do #вывод информации о посте
 
   results = @db.execute 'select * from posts where id =?', [post_id]
   @row = results[0]
-
+  # потому что results -это массив хэшей
+  # (в этом массиве будет один хэш, т.к. id всегда индивидуальный, а выбор по id)
+  # @row -это хэш
   erb :details
 end
 

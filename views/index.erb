@@ -1,13 +1,14 @@
 <h2>Последние посты:</h2>
 <br>
-<% @results.each do |post| %>
-   <p><%= post['content'] %>
-   <br>
-   <br>
-   Добавлено <%= post['created_date'] %>
-   <br>
-   <br>
-   <a href="/post-comments/<%= post['id'] %>">Комментарии</a>
-  </p>
-  <hr>
+<% @results.each do |post_item| %>
+<p>
+  <%= post_item['content'] %>
+  <br>
+  <br>
+  Добавлено <%= post_item['created_date'] %>
+  <br>
+  <br>
+  <a href="/details/<%= post_item['id'] %>">Комментарии</a>
+</p>
+<hr>
 <% end %>

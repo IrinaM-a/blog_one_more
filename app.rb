@@ -26,6 +26,16 @@ get '/' do
 	erb :index			
 end
 
+# post_id считывается из url:
+get '/details/:post_id' do #вывод информации о посте
+  post_id = params[:post_id]
+
+  results = @db.execute 'select * from posts where id =?', [post_id]
+  @row = results[0]
+
+  erb :details
+end
+
 get '/new' do
   erb :new
 end

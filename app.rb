@@ -44,6 +44,8 @@ get '/details/:post_id' do #вывод информации о посте
   # потому что results -это массив хэшей
   # (в этом массиве будет один хэш, т.к. id всегда индивидуальный, а выбор по id)
   # @row -это хэш
+  @comments = @db.execute 'select * from comments where post_id = ? order by id', [post_id]
+
   erb :details
 end
 

@@ -22,7 +22,7 @@ end
 
 
 get '/' do
-	erb "Hello! Blog"			
+	erb :index			
 end
 
 get '/new' do

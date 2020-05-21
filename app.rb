@@ -54,3 +54,10 @@ post '/new' do
 
   redirect to '/'
 end
+
+post '/details/:post_id' do
+  post_id = params[:post_id]
+  content = params[:content]
+
+  erb "Вы ввели комментарий #{content} для поста #{post_id}"
+end
